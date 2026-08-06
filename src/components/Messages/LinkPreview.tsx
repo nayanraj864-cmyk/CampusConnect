@@ -17,7 +17,13 @@ interface LinkPreviewProps {
 // ---------------------------------------------------------------------------
 
 function LinkPreviewSkeleton({ isMe }: { isMe: boolean }) {
+<<<<<<< HEAD
   const base = isMe ? "bg-lime/70 border-black/20" : "bg-slate-100 dark:bg-zinc-700 border-black/10 dark:border-white/10";
+=======
+  const base = isMe
+    ? "bg-lime/70 border-black/20"
+    : "bg-slate-100 dark:bg-zinc-700 border-black/10 dark:border-white/10";
+>>>>>>> origin/main
   return (
     <div
       className={`mt-2 border-2 overflow-hidden animate-pulse ${base}`}
@@ -55,8 +61,16 @@ export function LinkPreview({ url, isMe = false }: LinkPreviewProps) {
   if (!data || (!data.title && !data.description && !data.image)) return null;
 
   const hostname = (() => {
+<<<<<<< HEAD
     try { return new URL(url).hostname.replace(/^www\./, ""); }
     catch { return url; }
+=======
+    try {
+      return new URL(url).hostname.replace(/^www\./, "");
+    } catch {
+      return url;
+    }
+>>>>>>> origin/main
   })();
 
   const cardBase = isMe
@@ -97,7 +111,13 @@ export function LinkPreview({ url, isMe = false }: LinkPreviewProps) {
               alt=""
               className="h-3.5 w-3.5 object-contain"
               aria-hidden="true"
+<<<<<<< HEAD
               onError={(e) => { e.currentTarget.style.display = "none"; }}
+=======
+              onError={(e) => {
+                e.currentTarget.style.display = "none";
+              }}
+>>>>>>> origin/main
             />
           ) : (
             <Globe size={12} aria-hidden="true" className="opacity-50" />
@@ -114,9 +134,13 @@ export function LinkPreview({ url, isMe = false }: LinkPreviewProps) {
 
         {/* Title */}
         {data.title && (
+<<<<<<< HEAD
           <p className="line-clamp-2 font-display text-xs font-bold leading-snug">
             {data.title}
           </p>
+=======
+          <p className="line-clamp-2 font-display text-xs font-bold leading-snug">{data.title}</p>
+>>>>>>> origin/main
         )}
 
         {/* Description */}

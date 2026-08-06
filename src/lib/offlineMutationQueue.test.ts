@@ -18,7 +18,13 @@ vi.mock("sonner", () => ({
 vi.mock("./supabase/client", () => ({
   createClient: () => ({
     auth: {
+<<<<<<< HEAD
       getSession: vi.fn().mockResolvedValue({ data: { session: { user: { id: "user-123" } } }, error: null }),
+=======
+      getSession: vi
+        .fn()
+        .mockResolvedValue({ data: { session: { user: { id: "user-123" } } }, error: null }),
+>>>>>>> origin/main
       refreshSession: vi.fn().mockResolvedValue({ data: { session: {} }, error: null }),
       getUser: vi.fn().mockResolvedValue({ data: { user: { id: "user-123" } } }),
     },
@@ -49,7 +55,15 @@ function setupIndexedDBMock() {
     transaction: () => ({
       objectStore: () => ({
         getAll: () => {
+<<<<<<< HEAD
           const req: { result?: QueuedMutationItem[]; onsuccess: (() => void) | null; onerror: (() => void) | null } = {
+=======
+          const req: {
+            result?: QueuedMutationItem[];
+            onsuccess: (() => void) | null;
+            onerror: (() => void) | null;
+          } = {
+>>>>>>> origin/main
             result: Array.from(storeMap.values()),
             onsuccess: null,
             onerror: null,
@@ -81,7 +95,16 @@ function setupIndexedDBMock() {
 
   const mockIDB = {
     open: () => {
+<<<<<<< HEAD
       const req: { result: typeof mockDB; onsuccess: (() => void) | null; onerror: (() => void) | null; onupgradeneeded: (() => void) | null } = {
+=======
+      const req: {
+        result: typeof mockDB;
+        onsuccess: (() => void) | null;
+        onerror: (() => void) | null;
+        onupgradeneeded: (() => void) | null;
+      } = {
+>>>>>>> origin/main
         result: mockDB,
         onsuccess: null,
         onerror: null,

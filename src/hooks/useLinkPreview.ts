@@ -113,7 +113,13 @@ export function useLinkPreview(url: string | null | undefined): UseLinkPreviewRe
       }
     })();
 
+<<<<<<< HEAD
     return () => { cancelled = true; };
+=======
+    return () => {
+      cancelled = true;
+    };
+>>>>>>> origin/main
   }, [url]);
 
   return { data, loading, error };
